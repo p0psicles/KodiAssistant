@@ -1,0 +1,60 @@
+{
+  "id": "62bdcfaf-dace-4e98-b5a1-6f34dc04289e",
+  "name": "series-title",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "Game of thrones",
+      "synonyms": [
+        "Game of thrones"
+      ]
+    },
+    {
+      "value": "Breaking bad",
+      "synonyms": [
+        "Breaking bad"
+      ]
+    },
+    {
+      "value": "Marvel\u0027s defenders",
+      "synonyms": [
+        "Marvel\u0027s defenders",
+        "The defenders",
+        "defenders"
+      ]
+    },
+    {
+      "value": "Marvel\u0027s jessica jones",
+      "synonyms": [
+        "Marvel\u0027s jessica jones",
+        "Jessica jones"
+      ]
+    },
+    {
+      "value": "The good wife",
+      "synonyms": [
+        "The good wife"
+      ]
+    },
+    {
+      "value": "Dragon ball super",
+      "synonyms": [
+        "Dragon ball super"
+      ]
+    },
+    {
+      "value": "Ozark",
+      "synonyms": [
+        "Ozark"
+      ]
+    },
+    {
+      "value": "Blue Exorcist",
+      "synonyms": [
+        "Blue Exorxist"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": true
+}

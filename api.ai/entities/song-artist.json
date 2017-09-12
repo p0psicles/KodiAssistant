@@ -1,0 +1,33 @@
+{
+  "id": "7bb54800-849a-405c-9ed1-4bb5d2ca3242",
+  "name": "song-artist",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "Michael Jackson",
+      "synonyms": [
+        "Michael Jackson"
+      ]
+    },
+    {
+      "value": "Eric Clapton",
+      "synonyms": [
+        "Eric Clapton"
+      ]
+    },
+    {
+      "value": "Madonna",
+      "synonyms": [
+        "Madonna"
+      ]
+    },
+    {
+      "value": "The black eyed peas",
+      "synonyms": [
+        "The black eyed peas"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}

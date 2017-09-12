@@ -1,0 +1,79 @@
+{
+  "id": "80c2b319-710c-47cf-a989-34f4cc750257",
+  "name": "kodi-action",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "play",
+      "synonyms": [
+        "play"
+      ]
+    },
+    {
+      "value": "play movie",
+      "synonyms": [
+        "play movie"
+      ]
+    },
+    {
+      "value": "play episode",
+      "synonyms": [
+        "play episode"
+      ]
+    },
+    {
+      "value": "play song",
+      "synonyms": [
+        "play song"
+      ]
+    },
+    {
+      "value": "switch channel",
+      "synonyms": [
+        "switch channel",
+        "change channel"
+      ]
+    },
+    {
+      "value": "shutdown",
+      "synonyms": [
+        "shutdown"
+      ]
+    },
+    {
+      "value": "volume",
+      "synonyms": [
+        "volume",
+        "volume down",
+        "volume up"
+      ]
+    },
+    {
+      "value": "power off",
+      "synonyms": [
+        "power off"
+      ]
+    },
+    {
+      "value": "open",
+      "synonyms": [
+        "open"
+      ]
+    },
+    {
+      "value": "stop",
+      "synonyms": [
+        "stop",
+        "halt"
+      ]
+    },
+    {
+      "value": "pause",
+      "synonyms": [
+        "pause"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}

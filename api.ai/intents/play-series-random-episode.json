@@ -1,0 +1,109 @@
+{
+  "userSays": [
+    {
+      "id": "1df44229-57e1-48a5-8efb-7a15f7f92a4e",
+      "data": [
+        {
+          "text": "play",
+          "alias": "kodi-action",
+          "meta": "@kodi-action",
+          "userDefined": false
+        },
+        {
+          "text": " a random episode of "
+        },
+        {
+          "text": "The wire",
+          "alias": "series-title",
+          "meta": "@series-title",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "c5c16daf-fea9-413e-974e-d6d12c0ee945",
+      "data": [
+        {
+          "text": "shuffle "
+        },
+        {
+          "text": "south park",
+          "alias": "series-title",
+          "meta": "@series-title",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "0a08a9cb-1184-4ca0-964b-acfb80473a26",
+      "data": [
+        {
+          "text": "Kodi",
+          "alias": "kodi-instance",
+          "meta": "@kodi-instance",
+          "userDefined": false
+        },
+        {
+          "text": " shuffle "
+        },
+        {
+          "text": "band of brothers",
+          "alias": "series-title",
+          "meta": "@series-title",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "a52d3bd3-2250-4191-9650-10bf4d78833a",
+  "name": "play-series-random-episode",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "dataType": "@kodi-instance",
+          "name": "kodi-instance",
+          "value": "$kodi-instance",
+          "isList": false
+        },
+        {
+          "required": true,
+          "dataType": "@series-title",
+          "name": "series-title",
+          "value": "$series-title",
+          "prompts": [],
+          "defaultValue": "Which series or show?",
+          "isList": false
+        },
+        {
+          "dataType": "@kodi-action",
+          "name": "kodi-action",
+          "value": "$kodi-action",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Sure playing a random episode for $series-title"
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

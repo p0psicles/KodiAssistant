@@ -4,15 +4,19 @@
 
 // init project
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 const kodiHandler = require('./kodi-handler.js');
 const LoadConfig = require('./config.js');
 const config = new LoadConfig();
 
+app.use(bodyParser.json()); // for parsing application/json
 app.use(express.static('public'));
 
 const validateRequest = function(req, res) {
     return new Promise((resolve, reject) => {
+        console.log('Start validating request');
+      
         let jsonString = '';
         let requestToken = '';
         let jsonBody;
@@ -23,33 +27,32 @@ const validateRequest = function(req, res) {
             reject('403 - Unauthorized request');
             return;
         }
+        
+        console.log(`Req on`)
+        if (req.body !== '') {
+            jsonBody = req.body;
+            if (jsonBody != undefined) {
+                requestToken = req.headers.token;
+                console.log(`Request token = ${requestToken}`);
+                if (requestToken === config.globalConf.authToken) {
+                    console.log('Authentication succeeded');
 
-        req.on('data', (data) => {
-            jsonString += data;
-        });
-        req.on('end', () => {
-            if (jsonString !== '') {
-                jsonBody = JSON.parse(jsonString);
-                if (jsonBody != null) {
-                    requestToken = jsonBody.token;
-                    console.log(`Request token = ${requestToken}`);
-                    if (requestToken === config.globalConf.authToken) {
-                        console.log('Authentication succeeded');
-
-                        config.routeKodiInstance(req);
-                        resolve('Authentication succeeded');
-                        return;
-                    }
+                    config.routeKodiInstance(req);
+                    resolve('Authentication succeeded');
+                    return;
                 }
             }
-            console.log('401 - Authentication failed');
-            res.sendStatus(401);
-            reject('401 - Authentication failed');
-        });
+        }
+        console.log('401 - Authentication failed');
+        res.sendStatus(401);
+        reject('401 - Authentication failed');
     });
 };
 
+// endpoint for api.ai kodi intents
 app.post('/kodi', function(request, response) {
+    console.log(`headers: ${JSON.stringify(request.headers)}`);
+    console.log(`body: ${JSON.stringify(request.body)}`);
     validateRequest(request, response).then(() => {
         kodiHandler.dispatch(request, response);
     });

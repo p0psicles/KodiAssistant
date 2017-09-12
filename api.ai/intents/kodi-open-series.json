@@ -1,0 +1,131 @@
+{
+  "userSays": [
+    {
+      "id": "afdccf13-71af-49a5-9eae-d7abf013ab99",
+      "data": [
+        {
+          "text": "Kodi",
+          "alias": "kodi-instance",
+          "meta": "@kodi-instance",
+          "userDefined": true
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "open",
+          "alias": "kodi-action",
+          "meta": "@kodi-action",
+          "userDefined": true
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "The civil war",
+          "alias": "series-title",
+          "meta": "@series-title",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "6160dfbf-7e94-4884-913a-0b9e290ac1e3",
+      "data": [
+        {
+          "text": "open",
+          "alias": "kodi-action",
+          "meta": "@kodi-action",
+          "userDefined": true
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "The Sopranos",
+          "alias": "series-title",
+          "meta": "@series-title",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "1518fcb9-4c6a-47bc-a8e0-c1c79fa93af8",
+      "data": [
+        {
+          "text": "kodi",
+          "alias": "kodi-instance",
+          "meta": "@kodi-instance",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "open",
+          "alias": "kodi-action",
+          "meta": "@kodi-action",
+          "userDefined": true
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "Rick and Morty",
+          "alias": "series-title",
+          "meta": "@series-title",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "57d5fb20-fb4e-40cf-ae28-1291c49c2633",
+  "name": "kodi-open-series",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "dataType": "@kodi-instance",
+          "name": "kodi-instance",
+          "value": "$kodi-instance",
+          "isList": false
+        },
+        {
+          "required": true,
+          "dataType": "@series-title",
+          "name": "series-title",
+          "value": "$series-title",
+          "isList": false
+        },
+        {
+          "dataType": "@kodi-action",
+          "name": "kodi-action",
+          "value": "$kodi-action",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Opening the series $series-title"
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

@@ -1,0 +1,74 @@
+{
+  "userSays": [
+    {
+      "id": "76a80ab2-152b-445f-ba3a-09bebd6042ca",
+      "data": [
+        {
+          "text": "refresh library"
+        }
+      ],
+      "isTemplate": false,
+      "count": 1
+    },
+    {
+      "id": "d2c16c7b-5dbb-4b9d-9674-fae09666ee31",
+      "data": [
+        {
+          "text": "scan library"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "93face16-1304-4f86-974d-0b12e6cacf11",
+      "data": [
+        {
+          "text": "Kodi",
+          "alias": "kodi-instance",
+          "meta": "@kodi-instance",
+          "userDefined": false
+        },
+        {
+          "text": " scan library"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "a5ba3792-0ca4-4cf2-b6ea-a8c8221b23a4",
+  "name": "refresh-library",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "dataType": "@kodi-instance",
+          "name": "kodi-instance",
+          "value": "$kodi-instance",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": [
+            "Performing a full video library scan",
+            "Sure, scanning video library"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

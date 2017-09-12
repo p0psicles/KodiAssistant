@@ -15,9 +15,32 @@ const fuzzySearchOptions = {
     keys: ['label']
 };
 
+/*
+ * Routes all /kodi post requests to the matching function.
+ */
 exports.dispatch = (request, response) => {
-    console.log(`Got request: ${request}`);
+    console.log(`Got request: ${request.body}`);
+    intents[request.body.result.metadata.intentName](request, response);
 };
+
+/*
+ * Object of kodi functions.
+ * Each key matches an api.ai intent identifier.
+ */
+const intents = {
+    'refresh-library': (request, response) => {
+        request.kodi.VideoLibrary.Scan();
+    },
+    'kodi-open-series': (request, response) => {
+        let param = {
+            tvshowTitle: request.body.result.parameters['series-title'].toLowerCase()
+        };
+
+        kodiFindTvShow(request, response, param).then((data) => {
+            kodiOpenVideoWindow(data.file, request.kodi);
+        });
+    }
+}
 
 exports.kodiPlayPause = (request, response) => { // eslint-disable-line no-unused-vars
     console.log('Play/Pause request received');
@@ -77,35 +100,35 @@ exports.kodiActivateTv = (request, response) => { // eslint-disable-line no-unus
 const tryActivateTv = () => {
     if (process.env.ACTIVATE_TV != null && process.env.ACTIVATE_TV === 'true') {
         console.log('Activating TV first..');
-        kodiActivateTv(null, null);
+        exports.kodiActivateTv(null, null);
     }
 };
 
 const kodiFindMovie = (movieTitle, Kodi) => {
     return new Promise((resolve, reject) => {
         Kodi.VideoLibrary.GetMovies() // eslint-disable-line new-cap
-        .then((movies) => {
-            if (!(movies && movies.result && movies.result.movies && movies.result.movies.length > 0)) {
-                throw new Error('no results');
-            }
+            .then((movies) => {
+                if (!(movies && movies.result && movies.result.movies && movies.result.movies.length > 0)) {
+                    throw new Error('no results');
+                }
 
-            // Create the fuzzy search object
-            let fuse = new Fuse(movies.result.movies, fuzzySearchOptions);
-            let searchResult = fuse.search(movieTitle);
+                // Create the fuzzy search object
+                let fuse = new Fuse(movies.result.movies, fuzzySearchOptions);
+                let searchResult = fuse.search(movieTitle);
 
-            // If there's a result
-            if (searchResult.length > 0) {
-                let movieFound = searchResult[0];
+                // If there's a result
+                if (searchResult.length > 0) {
+                    let movieFound = searchResult[0];
 
-                console.log(`Found movie "${movieFound.label}" (${movieFound.movieid})`);
-                resolve(movieFound);
-            } else {
-                reject(`Couldn't find movie "${movieTitle}"`);
-            }
-        })
-        .catch((e) => {
-            reject(e);
-        });
+                    console.log(`Found movie "${movieFound.label}" (${movieFound.movieid})`);
+                    resolve(movieFound);
+                } else {
+                    reject(`Couldn't find movie "${movieTitle}"`);
+                }
+            })
+            .catch((e) => {
+                reject(e);
+            });
     });
 };
 
@@ -255,7 +278,7 @@ const kodiPlaySpecificEpisode = (request, res, requestParams) => {
                             episodeid: episdoeToPlay.episodeid
                         }
                     };
-                    
+
                     Kodi.Player.Open(paramPlayerOpen); // eslint-disable-line new-cap
                     return;
                 }
@@ -306,33 +329,33 @@ exports.kodiShuffleEpisodeHandler = (request, response) => { // eslint-disable-l
             }
         };
         let Kodi = request.kodi;
-        
+
         Kodi.VideoLibrary.GetEpisodes(paramGetEpisodes) // eslint-disable-line new-cap
-        .then((episodeResult) => {
-            if (!(episodeResult && episodeResult.result && episodeResult.result.episodes && episodeResult.result.episodes.length > 0)) {
-                throw new Error('no results');
-            }
-            let episodes = episodeResult.result.episodes;
+            .then((episodeResult) => {
+                if (!(episodeResult && episodeResult.result && episodeResult.result.episodes && episodeResult.result.episodes.length > 0)) {
+                    throw new Error('no results');
+                }
+                let episodes = episodeResult.result.episodes;
 
-            // Check if there are episodes for this TV show
-            if (episodes) {
-                let randomEpisode = episodes[Math.floor(Math.random() * episodes.length)];
+                // Check if there are episodes for this TV show
+                if (episodes) {
+                    let randomEpisode = episodes[Math.floor(Math.random() * episodes.length)];
 
-                console.log(`found episodes, picking random episode: ${randomEpisode.label}`);
+                    console.log(`found episodes, picking random episode: ${randomEpisode.label}`);
 
-                let paramPlayerOpen = {
-                    item: {
-                        episodeid: randomEpisode.episodeid
-                    }
-                };
+                    let paramPlayerOpen = {
+                        item: {
+                            episodeid: randomEpisode.episodeid
+                        }
+                    };
 
-                Kodi.Player.Open(paramPlayerOpen); // eslint-disable-line new-cap
-                return;
-            }
-        })
-        .catch((e) => {
-            console.log(e);
-        });
+                    Kodi.Player.Open(paramPlayerOpen); // eslint-disable-line new-cap
+                    return;
+                }
+            })
+            .catch((e) => {
+                console.log(e);
+            });
     });
 };
 
@@ -342,7 +365,7 @@ const kodiOpenVideoWindow = (file, Kodi) => {
         'window': 'videos',
         'parameters': [file]
     };
-    
+
     Kodi.GUI.ActivateWindow(params); // eslint-disable-line new-cap
 };
 
@@ -405,7 +428,7 @@ const kodiPlayChannel = (request, response, searchOptions) => {
     let reqChannel = request.query.q.trim();
 
     console.log(`PVR channel request received to play "${reqChannel}"`);
-    
+
     // Build filter to search for all channel under the channel group
     let param = {
         channelgroupid: 'alltv',

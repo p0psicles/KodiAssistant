@@ -1,0 +1,137 @@
+{
+  "userSays": [
+    {
+      "id": "7f7e51b6-b19f-48d2-9b70-dbf928a7cc18",
+      "data": [
+        {
+          "text": "stop",
+          "alias": "kodi-action",
+          "meta": "@kodi-action",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "50dfaa77-123f-41bd-9152-287f58c4015b",
+      "data": [
+        {
+          "text": "resume",
+          "alias": "kodi-action",
+          "meta": "@kodi-action",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "b41bdbf7-ff97-4d93-a03a-757f734d7d4e",
+      "data": [
+        {
+          "text": "pause",
+          "alias": "kodi-action",
+          "meta": "@kodi-action",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "d91c8654-f143-42a9-b0b3-a77413b12e34",
+      "data": [
+        {
+          "text": "play",
+          "alias": "kodi-action",
+          "meta": "@kodi-action",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "a31cb2f4-f1bc-459c-8498-54f881247e8f",
+      "data": [
+        {
+          "text": "Kodi",
+          "alias": "kodi-instance",
+          "meta": "@kodi-instance",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "pause",
+          "alias": "kodi-action",
+          "meta": "@kodi-action",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "ded5521a-17dc-47bd-872c-53aac0768e6e",
+      "data": [
+        {
+          "text": "Kodi",
+          "alias": "kodi-instance",
+          "meta": "@kodi-instance",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "play",
+          "alias": "kodi-action",
+          "meta": "@kodi-action",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "78e922a7-81a6-468e-ac58-4769449a2433",
+  "name": "kodi-play-pause-stop",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "dataType": "@kodi-instance",
+          "name": "kodi-instance",
+          "value": "$kodi-instance",
+          "isList": false
+        },
+        {
+          "required": true,
+          "dataType": "@kodi-action",
+          "name": "kodi-action",
+          "value": "$kodi-action",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Sending command $kodi-action"
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

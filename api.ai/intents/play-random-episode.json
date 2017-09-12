@@ -1,0 +1,111 @@
+{
+  "userSays": [
+    {
+      "id": "fb11f237-ba2d-439d-b5f9-ce3395f2c5b1",
+      "data": [
+        {
+          "text": "play",
+          "alias": "kodi-action",
+          "meta": "@kodi-action",
+          "userDefined": true
+        },
+        {
+          "text": " next episode of "
+        },
+        {
+          "text": "Boruto",
+          "alias": "series-title",
+          "meta": "@series-title",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "c278cb5c-e4f7-4d7e-bb8b-d9d45eec0068",
+      "data": [
+        {
+          "text": "play",
+          "alias": "kodi-action",
+          "meta": "@kodi-action",
+          "userDefined": false
+        },
+        {
+          "text": " an episode of "
+        },
+        {
+          "text": "south park",
+          "alias": "series-title",
+          "meta": "@series-title",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "13f60642-6c60-4403-837f-9494565e4d9f",
+      "data": [
+        {
+          "text": "play",
+          "alias": "kodi-action",
+          "meta": "@kodi-action",
+          "userDefined": false
+        },
+        {
+          "text": " an episode of "
+        },
+        {
+          "text": "Game of thrones",
+          "alias": "series-title",
+          "meta": "@series-title",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "9556aba5-6263-4b69-a6ee-e1b1672ef4fe",
+  "name": "play-random-episode",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "dataType": "@kodi-action",
+          "name": "kodi-action",
+          "value": "$kodi-action",
+          "isList": false
+        },
+        {
+          "required": true,
+          "dataType": "@series-title",
+          "name": "series-title",
+          "value": "$series-title",
+          "prompts": [
+            "What\u0027s the series title?",
+            "Can you give me the title?"
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Sure, playing the next unwatched episode for $series-title"
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

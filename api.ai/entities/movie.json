@@ -1,0 +1,65 @@
+{
+  "id": "c7b143fb-69c8-4c4f-9abb-b1eed1b5def6",
+  "name": "movie",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "game of thrones",
+      "synonyms": [
+        "game of thrones",
+        "GOT"
+      ]
+    },
+    {
+      "value": "Lord of the rings",
+      "synonyms": [
+        "Lord of the rings"
+      ]
+    },
+    {
+      "value": "Back to the future",
+      "synonyms": [
+        "Back to the future"
+      ]
+    },
+    {
+      "value": "The fast and the furious",
+      "synonyms": [
+        "The fast and the furious"
+      ]
+    },
+    {
+      "value": "The fast and the furious 2",
+      "synonyms": [
+        "The fast and the furious 2"
+      ]
+    },
+    {
+      "value": "Godzilla",
+      "synonyms": [
+        "Godzilla"
+      ]
+    },
+    {
+      "value": "swordmaster",
+      "synonyms": [
+        "swordmaster",
+        "sword master"
+      ]
+    },
+    {
+      "value": "this is the end",
+      "synonyms": [
+        "this is the end"
+      ]
+    },
+    {
+      "value": "the lego batman movie",
+      "synonyms": [
+        "the lego batman movie"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": true
+}

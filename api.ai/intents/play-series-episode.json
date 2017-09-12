@@ -1,0 +1,267 @@
+{
+  "userSays": [
+    {
+      "id": "62b5b18b-f90a-4c40-93ae-87991b30a2e7",
+      "data": [
+        {
+          "text": "Kodi",
+          "alias": "kodi-instance",
+          "meta": "@kodi-instance",
+          "userDefined": true
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "play",
+          "alias": "kodi-action",
+          "meta": "@kodi-action",
+          "userDefined": true
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "Ozark",
+          "alias": "series-title",
+          "meta": "@series-title",
+          "userDefined": true
+        },
+        {
+          "text": " season "
+        },
+        {
+          "text": "@sys.any:season",
+          "alias": "season-number",
+          "meta": "@sys.number",
+          "userDefined": true
+        },
+        {
+          "text": " episode "
+        },
+        {
+          "text": "@sys.any:episode",
+          "alias": "episode-number",
+          "meta": "@sys.number",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "c4b13dac-c0a4-438a-b368-76906b8e0d3c",
+      "data": [
+        {
+          "text": "Kodi",
+          "alias": "kodi-instance",
+          "meta": "@kodi-instance",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "play",
+          "alias": "kodi-action",
+          "meta": "@kodi-action",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "Dragon ball super",
+          "alias": "series-title",
+          "meta": "@series-title",
+          "userDefined": false
+        },
+        {
+          "text": " season "
+        },
+        {
+          "text": "@sys.any:season",
+          "alias": "season-number",
+          "meta": "@sys.number",
+          "userDefined": true
+        },
+        {
+          "text": " episode "
+        },
+        {
+          "text": "@sys.any:episode",
+          "alias": "episode-number",
+          "meta": "@sys.number",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 1
+    },
+    {
+      "id": "eb4d5bb8-49f2-4a6e-8f71-ded51918458d",
+      "data": [
+        {
+          "text": "Kodi",
+          "alias": "kodi-instance",
+          "meta": "@kodi-instance",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "play",
+          "alias": "kodi-action",
+          "meta": "@kodi-action",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "House of cards",
+          "alias": "series-title",
+          "meta": "@series-title",
+          "userDefined": true
+        },
+        {
+          "text": " season "
+        },
+        {
+          "text": "@sys.any:season",
+          "alias": "season-number",
+          "meta": "@sys.number",
+          "userDefined": true
+        },
+        {
+          "text": " episode "
+        },
+        {
+          "text": "@sys.any:episode",
+          "alias": "episode-number",
+          "meta": "@sys.number",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "ecff7266-033b-475e-a7f3-b23fe0971d29",
+      "data": [
+        {
+          "text": "Kodi",
+          "alias": "kodi-instance",
+          "meta": "@kodi-instance",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "play",
+          "alias": "kodi-action",
+          "meta": "@kodi-action",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "Game of thrones",
+          "alias": "series-title",
+          "meta": "@series-title",
+          "userDefined": false
+        },
+        {
+          "text": " season "
+        },
+        {
+          "text": "@sys.any:season",
+          "alias": "season-number",
+          "meta": "@sys.number",
+          "userDefined": true
+        },
+        {
+          "text": " episode "
+        },
+        {
+          "text": "@sys.any:episode",
+          "alias": "episode-number",
+          "meta": "@sys.number",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "9d896ed4-cb5b-4699-af5d-c6008ed38eea",
+  "name": "play-series-episode",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "dataType": "@kodi-instance",
+          "name": "kodi-instance",
+          "value": "$kodi-instance",
+          "isList": false
+        },
+        {
+          "dataType": "@kodi-action",
+          "name": "kodi-action",
+          "value": "$kodi-action",
+          "isList": false
+        },
+        {
+          "required": true,
+          "dataType": "@series-title",
+          "name": "series-title",
+          "value": "$series-title",
+          "prompts": [
+            "Which series would you like to see?",
+            "Please specify the series?"
+          ],
+          "isList": false
+        },
+        {
+          "required": true,
+          "dataType": "@sys.number",
+          "name": "season-number",
+          "value": "$season-number",
+          "prompts": [
+            "Which season?",
+            "What season?",
+            "Could you specify the season?"
+          ]
+        },
+        {
+          "required": true,
+          "dataType": "@sys.number",
+          "name": "episode-number",
+          "value": "$episode-number",
+          "prompts": [
+            "Which episode?"
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Sure playing $series-title season $season-number episode $episode-number"
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

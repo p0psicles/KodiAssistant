@@ -1,0 +1,239 @@
+{
+  "userSays": [
+    {
+      "id": "cbd32c5b-c306-4a76-a577-b414ec2f89d8",
+      "data": [
+        {
+          "text": "Kodi",
+          "alias": "kodi-instance",
+          "meta": "@kodi-instance",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "play",
+          "alias": "kodi-action",
+          "meta": "@kodi-action",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "lalala land",
+          "alias": "movie",
+          "meta": "@movie",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 1
+    },
+    {
+      "id": "ee492dd8-e2f8-43cb-9598-7eb197c8cb64",
+      "data": [
+        {
+          "text": "Kodi",
+          "alias": "kodi-instance",
+          "meta": "@kodi-instance",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "play",
+          "alias": "kodi-action",
+          "meta": "@kodi-action",
+          "userDefined": true
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "swordmaster",
+          "alias": "movie",
+          "meta": "@movie",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 2
+    },
+    {
+      "id": "2ddd95b4-b1fe-4040-9684-1ee45615593f",
+      "data": [
+        {
+          "text": "Kodi",
+          "alias": "kodi-instance",
+          "meta": "@kodi-instance",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "pay",
+          "alias": "kodi-action",
+          "meta": "@kodi-action",
+          "userDefined": true
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "the lego batman movie",
+          "alias": "movie",
+          "meta": "@movie",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "6bc174bb-0a48-488b-b5f2-17ef0dab9b43",
+      "data": [
+        {
+          "text": "Kodi",
+          "alias": "kodi-instance",
+          "meta": "@kodi-instance",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "play",
+          "alias": "kodi-action",
+          "meta": "@kodi-action",
+          "userDefined": true
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "this is the end",
+          "alias": "movie",
+          "meta": "@movie",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "857c814e-330c-45f2-bae9-804d28c45368",
+      "data": [
+        {
+          "text": "Kodi",
+          "alias": "kodi-instance",
+          "meta": "@kodi-instance",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "play",
+          "alias": "kodi-action",
+          "meta": "@kodi-action",
+          "userDefined": true
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "Godzilla",
+          "alias": "movie",
+          "meta": "@movie",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 1
+    },
+    {
+      "id": "474c639f-f241-47c6-9b79-3c493e8bddf0",
+      "data": [
+        {
+          "text": "Kodi",
+          "alias": "kodi-instance",
+          "meta": "@kodi-instance",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "play",
+          "alias": "kodi-action",
+          "meta": "@kodi-action",
+          "userDefined": true
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "game of thrones",
+          "alias": "movie",
+          "meta": "@movie",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "a3c80be5-b770-4554-8299-512bc59d4d46",
+  "name": "play-movie",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "required": false,
+          "dataType": "@kodi-instance",
+          "name": "kodi-instance",
+          "value": "$kodi-instance",
+          "isList": false
+        },
+        {
+          "required": true,
+          "dataType": "@movie",
+          "name": "movie",
+          "value": "$movie",
+          "isList": false
+        },
+        {
+          "dataType": "@kodi-action",
+          "name": "kodi-action",
+          "value": "$kodi-action",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": [
+            "Sure i\u0027ll start the movie $movie for you!",
+            "Yes, popcorn ready? Starting movie $movie",
+            "Running $movie on $kodi-instance.original"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

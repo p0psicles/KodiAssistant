@@ -1,0 +1,17 @@
+{
+  "id": "048976c3-013a-46ed-b049-45a7a46b4dbb",
+  "name": "kodi-instance",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "kodi",
+      "synonyms": [
+        "kodi",
+        "xbmc",
+        "mediacenter"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": true
+}

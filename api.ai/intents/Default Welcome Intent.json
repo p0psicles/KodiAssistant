@@ -1,0 +1,52 @@
+{
+  "userSays": [
+    {
+      "id": "6c3e8a21-23d7-4ee2-9bf0-f7aa6ea5ae3e",
+      "data": [
+        {
+          "text": "Hi Kodi"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "fbb2b936-d824-4e34-9f4c-b6d583ff2c6f",
+      "data": [
+        {
+          "text": "Hi"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "3ac27beb-a6a1-4c3b-b285-256bb2da17ec",
+  "name": "Default Welcome Intent",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "input.welcome",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Hi! This is your kodi assistant, what can I do for you?"
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [
+    {
+      "name": "WELCOME"
+    }
+  ]
+}
